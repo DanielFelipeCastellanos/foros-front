@@ -9,22 +9,26 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'foros',
+        redirectTo: 'comunidades/:comunidad/foros/:foro',
         pathMatch: 'full',
       },
       {
-        path: 'foros',
+        path: 'comunidades/:comunidad/foros/:foro',
         loadChildren: () =>
-          import('./foros/foros.module').then(
-            (m) => m.ForosModule
+          import('./foro/foro.module').then(m => m.ForoModule
           ),
       },
     ],
   },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
