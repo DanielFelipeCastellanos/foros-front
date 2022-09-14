@@ -1,0 +1,68 @@
+
+<div class="content">
+    <mat-card class="foro-header">
+        <mat-card-content>
+            <div class="header-info">
+                <a href="comunidades/:comunidad/foros/:foro" class="header-info__owner">Usuario</a>
+                <div class="header-info__date">01/01/2000</div>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="title">
+                Prueba de foros universitarios, Foro Alpha...
+            </div>
+            <div class="interactions">
+                <div class="favorite-button">
+                    <button mat-icon-button>
+                        <mat-icon>favorite</mat-icon>
+                    </button>
+                    <span>1.2k</span>
+                </div>
+                <div class="comment-button">
+                    <button mat-icon-button>
+                        <mat-icon>comment</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="make-comment">
+        <mat-card-content>
+            <div class="comment-content">
+                <mat-form-field class="comment-content__input" appearance="fill">
+                    <mat-label>Leave a comment</mat-label>
+                    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                </mat-form-field>
+                <div class="comment-button">
+                    <button mat-button color="primary">Comentar</button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="foro-comments">
+        <mat-card-content *ngFor="let foro of foros">
+            <mat-card>
+                <mat-card-content>
+                    <div class="comment-info">
+                        <a href="comunidades/:comunidad/foros/:foro" class="header-info__owner">{{foro.usuario}}</a>
+                        <div class="header-info__date">{{foro.fecha_registro}}</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="comments-content">{{foro.contenido}}</div>
+                    <div class="interactions">
+                        <div class="favorite-button">
+                            <button mat-icon-button>
+                                <mat-icon>favorite</mat-icon>
+                            </button>
+                            <span>{{foro.calificacion}}</span>
+                        </div>
+                        <div class="comment-button">
+                            <button mat-icon-button>
+                                <mat-icon>comment</mat-icon>
+                            </button>
+                        </div>
+                    </div>  
+                </mat-card-content>
+            </mat-card>          
+        </mat-card-content>
+    </mat-card>
+</div>

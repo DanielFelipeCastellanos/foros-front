@@ -1,0 +1,25 @@
+.content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    .foro-header {
+        width: 80%;
+
+    }
+    .make-comment {
+        width: 80%;
+    }
+    .comment-content__input {
+        width: 100%;
+    }
+    .foro-comments{
+        width: 80%;
+    }
+    .interactions {
+        display: flex;
+    }
+    mat-card {
+        margin: 10px;
+    }
+}
